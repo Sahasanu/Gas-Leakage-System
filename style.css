@@ -1,103 +1,89 @@
 body {
-     width: 100vw;
-     height: 100vh;
-     overflow: hidden;
-     background-color: #e3f4f6;
- }
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #e3f4f6;
+}
 
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- .head {
-     font-weight: 800;
-     font-size: 28px;
-     width: 100%;
-     height: 8vh;
-     text-align: center;
-     margin-top: 2vh;
-     display: flex;
-     justify-content: center;
- }
-
- .btn {
-     width: 100%;
-     display: flex;
-     justify-content: center;
-     margin-top: 2vh;
- }
-
- button {
-     width: 80%;
-     height: 7vh;
-     border-radius: 5px;
-     border: none;
-     background-color: rgb(62, 169, 251);
-     color: white;
-     font-size: 18px;
-     font-weight: 800;
- }
-
- .display {
-     width: 90%;
-     margin-left: auto;
-     margin-right: auto;
-     border-radius: 10px;
-     height: auto;
-     background-color: #fff;
-     margin-top: 5vh;
-     padding: 2vh;
-     font-weight: 900;
-     font-size: 28px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added box shadow */
- }
-
- .gaslabel {
-     margin-top: 1vh;
- }
-
- .gasreading {
-     margin-top: 1vh;
-     font-size: 40px;
-
- }
-
- .status {
-     width: 90%;
-     margin-left: auto;
-     margin-right: auto;
-     border-radius: 10px;
-     height: auto;
-     background-color: #fff;
-     margin-top: 5vh;
-     padding: 3vh;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added box shadow */
- }
-
- .stlevel {
-     font-size: 30px;
-     font-weight: 500;
- }
-
- .result {
-     font-size: 35px;
-     color: rgb(34, 165, 14);
- }
- .meterlevel {
+.head {
+    font-weight: 800;
+    font-size: 28px;
+    width: 100%;
+    height: 8vh;
+    text-align: center;
+    margin-top: 2vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+button {
+    width: 80%;
+    height: 7vh;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(62, 169, 251);
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.display {
+    width: 90%;
+    margin: 5vh auto 0;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 2vh;
+    font-weight: 900;
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gaslabel {
+    margin-top: 1vh;
+}
+
+.gasreading {
+    margin-top: 1vh;
+    font-size: 40px;
+}
+
+.status {
+    width: 90%;
+    margin: 5vh auto 0;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 3vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stlevel {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.result {
+    font-size: 35px;
+    color: rgb(34, 165, 14);
 }
 
 .metercircle {
     position: relative;
     width: 200px;
     height: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2vh;
+    margin: 2vh auto 0;
 }
 
 .metercircle svg {
@@ -115,4 +101,5 @@ body {
     transform: translate(-50%, -50%);
     font-size: 30px;
     font-weight: bold;
+    color: #333;
 }

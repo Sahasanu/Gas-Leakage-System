@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const connectButton = document.querySelector(".connect");
     const gasReadingEl = document.querySelector(".gasreading");
     const resultEl = document.querySelector(".result");
-    const percentTextEl = document.querySelector(".percent-text");
-    const progressCircle = document.querySelector(".progress-ring");
+    const percentTextEl = document.getElementById("percent-text");
+    const progressCircle = document.getElementById("progress-ring");
 
     async function connectBluetooth() {
         try {
@@ -21,10 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             bleCharacteristic.addEventListener("characteristicvaluechanged", event => {
                 const decoder = new TextDecoder();
-                const value = decoder.decode(event.target.value).trim();
-
-                // ✅ Convert received string to integer safely
-                const gasValue = parseInt(value);
+                const value = decoder.decode(event.target.value);
+                const gasMatch = value.match(/Gas:\s*(\d+)/);
+                const gasValue = gasMatch ? parseInt(gasMatch[1]) : NaN;
 
                 if (!isNaN(gasValue)) {
                     gasReadingEl.textContent = gasValue;
@@ -61,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         percentTextEl.textContent = "0%";
         updateMeter(0);
         resultEl.textContent = "Normal";
+        resultEl.style.color = "green";
     }
 
     function updateMeter(gasLevel) {
@@ -68,8 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const circumference = 2 * Math.PI * radius;
         const value = Math.min(Math.max(gasLevel, 0), 100); 
         const offset = circumference - (value / 100) * circumference;
+
         progressCircle.style.strokeDashoffset = offset;
-        percentTextEl.textContent = `${value}%`;
     }
 
     connectButton.addEventListener("click", () => {
