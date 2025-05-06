@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Control System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="head">Gas Leakage Detection</div>
+
+    <div class="btn">
+        <button class="connect">Connect</button>
+    </div>
+
+    <div class="display">
+        <div class="gaslabel">Gas Level:</div>
+        <div class="gasreading">0</div>
+    </div>
+
+    <div class="status">
+        <div class="txtlevel">
+            <p class="stlevel">Status:</p>
+            <p class="result">Normal</p>
+        </div>
+        <div class="metercircle">
+            <svg width="200" height="200">
+              <circle
+                cx="100"
+                cy="100"
+                r="85"
+                stroke="#ddd"
+                stroke-width="30"
+                fill="none"
+              />
+              <circle
+                id="progress-ring"
+                cx="100"
+                cy="100"
+                r="85"
+                stroke="green"
+                stroke-width="30"
+                fill="none"
+                stroke-linecap="round"
+                stroke-dasharray="534"
+                stroke-dashoffset="534"
+              />
+            </svg>
+            <div class="percent-text" id="percent-text">0%</div>
+          </div>
+          
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
