@@ -21,8 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             bleCharacteristic.addEventListener("characteristicvaluechanged", event => {
                 const decoder = new TextDecoder();
-                const value = decoder.decode(event.target.value);
-                const gasValue = parseInt(value.trim());
+                const value = decoder.decode(event.target.value).trim();
+
+                // ✅ Convert received string to integer safely
+                const gasValue = parseInt(value);
 
                 if (!isNaN(gasValue)) {
                     gasReadingEl.textContent = gasValue;
@@ -62,16 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateMeter(gasLevel) {
-        const circle = progressCircle;
-        const percentText = percentTextEl;
-    
         const radius = 85;
         const circumference = 2 * Math.PI * radius;
         const value = Math.min(Math.max(gasLevel, 0), 100); 
         const offset = circumference - (value / 100) * circumference;
-    
-        circle.style.strokeDashoffset = offset;
-        percentText.textContent = `${value}%`;
+        progressCircle.style.strokeDashoffset = offset;
+        percentTextEl.textContent = `${value}%`;
     }
 
     connectButton.addEventListener("click", () => {
