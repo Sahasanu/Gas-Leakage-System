@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     percentTextEl.textContent = gasValue + "%";
                     updateMeter(gasValue);
 
-                    resultEl.textContent = gasValue >= 50 ? "Warning!" : "Normal";
-                    resultEl.style.color = gasValue >= 50 ? "red" : "green";
+                    resultEl.textContent = gasValue >= 10 ? "Warning!" : "Normal";
+                    resultEl.style.color = gasValue >= 10 ? "red" : "green";
                 }
             });
 
