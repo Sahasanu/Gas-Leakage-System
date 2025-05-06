@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 percentTextEl.textContent = `${gasValue}%`;
                 updateMeter(gasValue);
 
-                resultEl.textContent = gasValue >= 50 ? "Warning!" : "Normal";
-                resultEl.style.color = gasValue >= 50 ? "red" : "green";
+                resultEl.textContent = gasValue >= 15 ? "Warning!" : "Normal";
+                resultEl.style.color = gasValue >= 15 ? "red" : "green";
             });
 
             await bleCharacteristic.startNotifications();
@@ -72,6 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const offset = circumference - (value / 100) * circumference;
     
         progressCircle.style.strokeDashoffset = offset;
+
+        (gasLevel >= 15)? progressCircle.style.stroke = "red" :progressCircle.style.stroke = "green";
+       
     }
 
     connectButton.addEventListener("click", () => {
